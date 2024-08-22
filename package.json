@@ -1,0 +1,22 @@
+{
+  "name": "agencycreavite",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "sass": "^1.77.8",
+    "svgo": "^3.3.2",
+    "vite": "^5.4.1",
+    "vite-plugin-html-inject": "^1.1.2",
+    "vite-plugin-image-optimizer": "^1.1.8"
+  },
+  "dependencies": {
+    "sharp": "^0.33.5",
+    "vite-plugin-minify": "^2.0.0"
+  }
+}
