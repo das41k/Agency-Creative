@@ -1,3 +1,4 @@
+<div class="overlay"></div>
 <header class="header">
     <div class="container">
         <div class="header__wrapper">
@@ -9,7 +10,7 @@
                 </div>
             </div>
             <nav class="header__nav">
-                <ul class="header__list">
+                <ul class="header__list header__list">
                     <li class="header__item">
                         <a href="#" class="header__item-link text-p-medium header__item-link--active">Home</a>
                     </li>
@@ -24,16 +25,16 @@
                     </li>
                 </ul>
             </nav>
-            <div class="header__right">
+            <div class="header__right header__right">
                 <label class="header__switcher">
-                    <input type="checkbox" class="header__switcher-checkbox">
+                    <input type="checkbox" class="header__switcher-checkbox" data-theme-switcher>
                     <p class="header__switcher-text"> Dark </p>
                 </label>
                 <button class="header__button button--two button"> Contact Us </button>
             </div>
-            <div class="header-burger">
-                <span class="header-burger__line"></span>
-            </div>
+            <button class="header-burger">
+                <span class="header-burger__line burger__line"></span>
+            </button>
         </div>
     </div>
 </header>

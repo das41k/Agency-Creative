@@ -1,133 +1,166 @@
 .header {
-    padding-top: 40px;
-    color: var(--subtitle-color);
-    // .header__logo
-    &__wrapper {
-        @include flex-all-between;
+  padding-top: 40px;
+  color: var(--subtitle-color);
+  // .header__logo
+  &__wrapper {
+    @include flex-all-between;
+  }
+  &__logo {
+    @include flex-align-center;
+    gap: 11px;
+    z-index: 4;
+    @include tablet {
+      &--visible {
+        position: fixed;
+      }
     }
-    &__logo {
-        @include flex-align-center;
-        gap: 11px;
-    }
+  }
 
-    // .header__head
+  // .header__head
 
-    &__head {
-        font-size: 20px;
-        font-weight: 700;
-        line-height: 24px;
-        letter-spacing: 1%;
-        & span {
-            font-size: 16px;
-            font-weight: 400;
-            line-height: 20px;
-        }
+  &__head {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: 1%;
+    & span {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 20px;
     }
-    &__nav {
-        @include tablet {
-            display: none;
-        }
-    }
-    // .header__list
+  }
+  // .header__list
 
-    &__list {
-        display: flex;
-        gap: 50px;
-    }
-
-    // .header__item
-
-    &__item {
-        &-link {
-            color: var(--subtitle-color);
-            text-transform: capitalize;
-            line-height: 24px;
-            &--active {
-                font-weight: 700;
-            }
-        }
-    }
-
-    // .header__right
-
-    &__right {
-        @include flex-all-between;
-        gap: 20px;
-        @include tablet {
-            display: none;
-        }
-    }
-
-    // .header__switcher
-
-    &__switcher {
-        // .header__switcher-checkbox
-        display: block;
-        width: 63px;
-        height: 28px;
-        border-radius: 13px;
-        background-color: var(--bg-switcher);
-        position: relative;
-        transform: translateY(5px);
-        transition: background-color var(--transition);
-        &-checkbox {
-            appearance: none;
-        }
-        &::before {
-            content: '';
-            display: inline-block;
-            width: 25px;
-            height: 24px;
-            background-color: #377dff;
-            border-radius: 50%;
-            position: absolute;
-            left: 2px;
-            top: 2px;
-            opacity: 0.7;
-            transition: left var(--transition);
-        }
-        &:has(&-checkbox:checked) {
-            background-color: #0b0f15;
-            &::before {
-                left: 32px;
-            }
-        }
-
-        &-text {
-            position: absolute;
-            top: -20px;
-            left: 50%;
-            transform: translateX(-50%);
-            color: var(--subtitle-color);
-            text-transform: capitalize;
-            line-height: 24px;
-        }
-    }
-    &__button {
-        font-weight: 700;
-        line-height: 24px;
-        letter-spacing: 1%;
-    }
-    &-burger {
-        @include burger;
-    }
-}
-.body-menu--opened {
-    & .header__nav {
-        display: block;
-    }
-    & .header__list {
+  &__list {
+    display: flex;
+    gap: 50px;
+    @include tablet {
+        position: fixed;
+        top: 0;
+        left: -100vw;
+        z-index: 1;
         flex-direction: column;
-        position: fixed;
-        left: 70px;
-        top: 150px;
+        justify-content: center;
+        width: 80dvw;
+        height: 100%;
+        background-color: var(--bg-color);
+        opacity: 0;
+        visibility: hidden;
+        transition: left var(--transition), opacity var(--transition),
+          visibility var(--transition);
+  
+        &--visible {
+          left: 0;
+          opacity: 1;
+          visibility: visible;
+          padding-left: 40px;
+        }
+      }
+  }
+
+  // .header__item
+
+  &__item {
+    &-link {
+      color: var(--subtitle-color);
+      text-transform: capitalize;
+      line-height: 24px;
+      &--active {
+        font-weight: 700;
+      }
     }
-    & .header__right {
-        @include flex-column;
+  }
+
+  // .header__right
+
+  &__right {
+    @include flex-all-between;
+    gap: 20px;
+    @include tablet {
+        position: fixed;
         flex-direction: column-reverse;
-        gap: 40px;
-        position: fixed;
-        left: 30px;
-        top: 450px;
+        left: 0;
+        z-index: 3;
+        bottom: 100px;
+        gap: 32px;
+        left: 25%;
+        transform: translateX(-25%);
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity var(--transition), visibility var(--transition);
+        &--visible {
+            visibility: visible;
+            opacity: 1;
+        }
     }
+  }
+
+  // .header__switcher
+
+  &__switcher {
+    // .header__switcher-checkbox
+    display: block;
+    width: 63px;
+    height: 28px;
+    border-radius: 13px;
+    background-color: var(--bg-switcher);
+    position: relative;
+    transform: translateY(5px);
+    transition: background-color var(--transition);
+    &-checkbox {
+      appearance: none;
+    }
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 25px;
+      height: 24px;
+      background-color: #377dff;
+      border-radius: 50%;
+      position: absolute;
+      left: 2px;
+      top: 2px;
+      opacity: 0.7;
+      transition: left var(--transition);
+    }
+    &:has(&-checkbox:checked) {
+      background-color: #0b0f15;
+      &::before {
+        left: 32px;
+      }
+    }
+
+    &-text {
+      position: absolute;
+      top: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: var(--subtitle-color);
+      text-transform: capitalize;
+      line-height: 24px;
+    }
+  }
+  &__button {
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: 1%;
+  }
+  &-burger {
+    @include burger;
+  }
+}
+.overlay {
+  @include tablet {
+    position: fixed;
+    inset: 0;
+    background-color: #0000002d;
+    opacity: 0;
+    visibility: hidden;
+    z-index: -2;
+    transition: opacity var(--transition), visibility var(--transition);
+    &--visible {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
 }

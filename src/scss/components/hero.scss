@@ -1,0 +1,133 @@
+.hero {
+    padding-top: 68px;
+    color: var(--subtitle-color);
+    &__wrapper {
+        @include flex-column-center;
+    }
+    &__title {
+        text-align: center;
+        font-family: Nunito;
+        margin-bottom: 24px;
+    }
+
+    // .hero__descr
+
+    &__descr {
+        color: var(--main-text);
+        opacity: 0.6;
+        text-align: center;
+        margin-bottom: 32px;
+    }
+
+    // .hero__button
+
+    &__button {
+        margin-bottom: 40px;
+    }
+
+    // .hero__img
+
+    &__img {
+        padding: 59px 0px 56px;
+        position: relative;
+        & img {
+            z-index: 1;
+        }
+    }
+
+    // .hero__contracts
+
+    &__contracts {
+        border-radius: 16px;
+        box-shadow: 0px 8px 24px 0px rgba(0, 0, 0, 0.15);
+        padding: 15px 31px 16px 20px;
+        position: absolute;
+        top: 83px;
+        left: -90px;
+        background-color: var(--bg-color);
+        
+        // .hero__contracts-head
+
+        &-head {
+            @include flex-align-center;
+            margin-bottom: 10px;
+            gap: 5px;
+        }
+
+        // .hero__contracts-title
+
+        &-title {
+            text-transform: uppercase;
+            opacity: 0.5;
+            font-size: 12px;
+            font-weight: 700;
+            line-height: 15px;
+            letter-spacing: 1%;
+        }
+
+        // .hero__contracts-text
+
+        &-text {
+            font-family: Nunito;
+            font-size: 24px;
+            font-weight: 400;
+            line-height: 33px;
+            letter-spacing: 1%;
+            & span {
+                font-weight: 700;
+            }
+        }
+    }
+
+    // .hero__seo
+
+    &__seo {
+        position: absolute;
+        bottom: 40px;
+        right: -100px;
+        border-radius: 16px;
+        box-shadow: 0px 8px 24px 0px rgba(0, 0, 0, 0.15);
+        padding: 27px 20px 25px 21px;
+        background-color: var(--bg-color);
+        font-style: normal;
+        // .hero__seo-head  
+
+        &-head {
+            @include flex-align-center;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+
+        // .hero__seo-name
+        &-name {
+            font-size: 10px;
+            font-weight: 600;
+            line-height: 13px;
+            letter-spacing: 1%;
+            margin-bottom: 2px;
+        }
+
+        // .hero__seo-work
+
+        &-work {
+            font-size: 6px;
+            font-weight: 600;
+            line-height: 8px;
+            letter-spacing: 1%;
+        }
+
+        // .hero__seo-quote
+
+        &-quote {
+            font-family: Nunito;
+            font-size: 10px;
+            font-weight: 400;
+            line-height: 14px;
+            letter-spacing: 1%;
+            max-width: 125px;
+            margin: 0;
+        }
+    }
+
+}
+

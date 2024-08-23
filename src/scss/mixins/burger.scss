@@ -37,14 +37,16 @@
     &__line {
         position: absolute;
         top: 50%;
-        left: 0;
-        width: 100%;
+        left: 25%;
+        transform: translateX(-25%);
+        width: 50%;
         height: var(--burger-line-height);
         background-color: currentcolor;
         transform: translateY(-50%);
         transition: transform;
         transition-duration: 0.2s;
         transition-delay: 0.2s;
+        transition: all var(--transition);
     }
     &::before,
     &::after,
@@ -67,8 +69,9 @@
             transform 0.2s 0.2s;
         }
       /* stylelint-disable-next-line selector-class-pattern */
-    .burger__line {
-            transform: scale(0);
+        & .burger__line {
+            opacity: 0;
+            visibility: hidden;
         }
     }
 }
