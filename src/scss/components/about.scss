@@ -1,0 +1,94 @@
+.about {
+    margin-top: 150px;
+    padding-bottom: 9px;
+    @include small-tablet {
+        margin-top: 99px;
+    }
+    // .about__title
+    &__wrapper {
+        position: relative;
+        &::before {
+            content: url('../assets/icons/dots-pink.svg');
+            display: inline-block;
+            position: absolute;
+            right: 665px;
+            bottom: -15px;
+            transform: rotate(-0.75deg);
+            z-index: -1;
+            @include small-desktop {
+                right: 425px;
+            }
+            @include tablet {
+                display: none;
+            }
+        }
+    }
+    &__title{
+        color: var(--title-color);
+        text-align: center;
+        margin-bottom: 20px;
+        @include mobile {
+            margin-bottom: 10px;
+        }
+    }
+
+    // .about__descr
+
+    &__descr {
+        color: var(--subtitle-color);
+        text-align: center;
+        margin-bottom: 38px;
+        @include mobile {
+            margin-bottom: 35px;
+        }
+    }
+
+    // .about__wrapper
+
+    &__wrapper {
+        @include flex-all-between;
+        gap: 65px;
+        @include small-desktop {
+            gap: 30px;
+        }
+        @include tablet {
+            flex-direction: column-reverse;
+            gap: 50px;
+        }
+    }
+
+    // .about__text
+
+    &__text {
+        margin-bottom: 24px;
+        &:nth-child(1) {
+            margin-bottom: 10px;
+        }
+    }
+
+    // .about__buttons
+
+    &__buttons {
+        display: flex;
+        gap: 22px;
+        @include small-desktop {
+            gap: 10px;
+        }
+        @include tablet {
+            justify-content: center;
+            gap: 35px;
+        }
+        @include small-mobile {
+            gap: 10px;
+        }
+    }
+}
+.button-video {
+    gap: 10px;
+    @include small-mobile {
+        gap: 3px;
+    }
+    & path {
+        stroke: var(--title-color);
+    }
+}

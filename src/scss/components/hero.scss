@@ -1,7 +1,12 @@
 .hero {
     padding-top: 68px;
     color: var(--subtitle-color);
+    position: relative;
     &__wrapper {
+        @include flex-column-center;
+    }
+    &__head {
+        position: relative;
         @include flex-column-center;
     }
     &__title {
@@ -30,8 +35,46 @@
     &__img {
         padding: 59px 0px 56px;
         position: relative;
-        & img {
+        & > img {
             z-index: 1;
+            @include mobile {
+                width: 330px;
+                height: 224px;
+            }
+        }
+        &::after {
+            content: url('../assets/icons/dots-red.svg');
+            display: inline-block;
+            position: absolute;
+            left: 170px;
+            bottom: 39px;
+            z-index: -1;
+            @include small-tablet {
+                bottom: 89%;
+                left: 100%;
+                transform: translate(-95%,86%);
+            }
+            @include mobile {
+                top: 50px;
+                left: 102%;
+            }
+        }
+        &::before {
+            content: url('../assets/icons/dots-blue.svg');
+            display: inline-block;
+            position: absolute;
+            left: 138px;
+            top: 39px;
+            z-index: -1;
+            @include small-tablet {
+                bottom: -55px;
+                left: -1%;
+                transform: translateY(71%);
+            }
+            @include mobile {
+                bottom: 38px;
+                left: -12px;
+            }
         }
     }
 
@@ -45,13 +88,32 @@
         top: 83px;
         left: -90px;
         background-color: var(--bg-color);
-        
+        @include tablet {
+            left: -15px;
+            top: 60px;
+        } 
+        @include small-tablet {
+            top: 30px;
+        }
+        @include mobile {
+            padding: 14px 17px 9px 14px;
+            border-radius: 6px;
+            left: -8px;
+            box-shadow: 0px 3.86px 11.57px 0px rgba(0, 0, 0, 0.15);
+        }
         // .hero__contracts-head
 
         &-head {
             @include flex-align-center;
             margin-bottom: 10px;
             gap: 5px;
+            @include mobile {
+                margin-bottom: 7px;
+                & svg {
+                    width: 13.33px;
+                    height: 12.68px;
+                }
+            }
         }
 
         // .hero__contracts-title
@@ -63,6 +125,10 @@
             font-weight: 700;
             line-height: 15px;
             letter-spacing: 1%;
+            @include mobile {
+                font-size: 6px;
+                line-height: 8px;
+            }
         }
 
         // .hero__contracts-text
@@ -75,6 +141,10 @@
             letter-spacing: 1%;
             & span {
                 font-weight: 700;
+            }
+            @include mobile {
+                font-size: 12px;
+                line-height: 16px;
             }
         }
     }
@@ -90,12 +160,29 @@
         padding: 27px 20px 25px 21px;
         background-color: var(--bg-color);
         font-style: normal;
+
+        @include tablet {
+            bottom: -30px;
+            right: -18px;
+        }
+        @include mobile {
+            padding: 13px 10px 11px;
+            box-shadow: 0px 3.86px 11.57px 0px rgba(0, 0, 0, 0.15);
+            bottom: 30px;
+        }
         // .hero__seo-head  
 
         &-head {
             @include flex-align-center;
             gap: 10px;
             margin-bottom: 12px;
+            @include mobile {
+                & img {
+                    width: 15.42px;
+                    height: 15.42px;
+                }
+                margin-bottom: 5px;
+            }
         }
 
         // .hero__seo-name
@@ -105,6 +192,10 @@
             line-height: 13px;
             letter-spacing: 1%;
             margin-bottom: 2px;
+            @include mobile {
+                font-size: 5px;
+                line-height: 6px;
+            }
         }
 
         // .hero__seo-work
@@ -114,6 +205,10 @@
             font-weight: 600;
             line-height: 8px;
             letter-spacing: 1%;
+            @include mobile {
+                font-size: 3px;
+                line-height: 4px;
+            }
         }
 
         // .hero__seo-quote
@@ -126,8 +221,55 @@
             letter-spacing: 1%;
             max-width: 125px;
             margin: 0;
+            @include mobile {
+                font-size: 5px;
+                line-height: 7px;
+                max-width: 60px;
+            }
         }
     }
-
+    &__ellipse {
+        position: absolute;
+        &--red {
+            &--first {
+                right: -35px;
+                top: 130px;
+                @include mobile {
+                    top: 30px;
+                }
+            }
+            &--two {
+                left: -60px;
+                top: 194px;
+                @include tablet {
+                    display: none;
+                }
+            }
+        }
+        &--blue {
+            &--first {
+                left: -94px;
+                top: 243px;
+                @include small-desktop {
+                    left: 0px;
+                }
+                @include tablet {
+                    top: 95%;
+                    transform: translateY(-95%);
+                    left: -50px;
+                }
+                @include mobile {
+                    left: -57px;
+                }
+            }
+            &--two {
+                right: -126px;
+                top: 20px;
+                @include tablet {
+                    display: none;
+                }
+            }
+        }
+    }
 }
 

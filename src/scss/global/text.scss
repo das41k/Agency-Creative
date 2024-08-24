@@ -4,12 +4,35 @@
         font-weight: 800;
         line-height: 87px;
         letter-spacing: 1%;
+        @include small-desktop {
+            font-size: 60px;
+        }
+        @include tablet {
+            font-size: 56px;
+        }
+        @include small-tablet {
+            font-size: 50px;
+        }
+        @include mobile {
+            font-size: 30px;
+            line-height: 50px;
+        }
+        @include small-mobile {
+            font-size: 26px;
+        }
     }
     &-h2 {
         font-size: 24px;
         font-weight: 600;
         line-height: 24px;
         letter-spacing: 1%;
+        @include tablet {
+            font-size: 22px;
+        }
+        @include mobile {
+            font-size: 20px;
+            line-height: 18px;
+        }
     }
     &-h3 {
         font-size: 24px;
@@ -26,11 +49,37 @@
             font-weight: 700;
             line-height: 75px;
             letter-spacing: 0.3%;
+            @include small-desktop {
+                font-size: 52px;
+            }
+            @include tablet {
+                font-size: 50px;
+            }
+            @include small-tablet {
+                font-size: 46px;
+            }
+            @include mobile {
+                font-size: 28px;
+                line-height: 33px;
+            }
+            
         }
         &-large {
             font-size: 20px;
             line-height: 32px;
             letter-spacing: 1%;
+            @include tablet {
+                font-size: 18px;
+                & span {
+                    display: none;
+                }
+            }
+            @include mobile {
+                font-size: 16px;
+            }
+            @include small-mobile {
+                font-size: 14px;
+            }
         }
         &-medium {
             font-size: 18px;

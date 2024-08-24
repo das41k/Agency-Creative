@@ -12,6 +12,7 @@
     @include tablet {
       &--visible {
         position: fixed;
+        top: 10%;
       }
     }
   }
@@ -103,7 +104,7 @@
     width: 63px;
     height: 28px;
     border-radius: 13px;
-    background-color: var(--bg-switcher);
+    background-color: #0b0f15;
     position: relative;
     transform: translateY(5px);
     transition: background-color var(--transition);
@@ -124,7 +125,7 @@
       transition: left var(--transition);
     }
     &:has(&-checkbox:checked) {
-      background-color: #0b0f15;
+      background-color: #c7c7c7;
       &::before {
         left: 32px;
       }
@@ -161,6 +162,7 @@
     &--visible {
       opacity: 1;
       visibility: visible;
+      z-index: 1;
     }
   }
 }

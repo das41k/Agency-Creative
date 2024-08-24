@@ -16,6 +16,7 @@
     "vite-plugin-image-optimizer": "^1.1.8"
   },
   "dependencies": {
+    "fslightbox": "^3.4.1",
     "sharp": "^0.33.5",
     "vite-plugin-minify": "^2.0.0"
   }

@@ -16,4 +16,10 @@
         color: var(--title-color);
         font-weight: 600;
     }
+    @include mini-desktop {
+        padding: 9px 30px;
+    }
+    @include small-mobile {
+        font-size: 14px;
+    }
 }
