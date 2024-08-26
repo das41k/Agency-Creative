@@ -1,0 +1,122 @@
+.portfolio {
+    margin-top: 130px;
+    // .portfolio__title
+    & .container {
+        position: relative;
+        &::before {
+            content: url(../assets/icons/dots-pink.svg);
+            position: absolute;
+            display: inline-block;
+            transform: rotate(-10deg);
+            right: -5px;
+            top: 160px;
+        }
+        &::after {
+            content: url(../assets/icons/dots-pink.svg);
+            position: absolute;
+            display: inline-block;
+            transform: rotate(15deg);
+            top: 420px;
+            left: 400px;
+            z-index: -1;
+            @include small-desktop {
+                left: 320px;
+            }
+            @include tablet {
+                left: 250px;
+            }
+        }
+        @include small-tablet {
+            &::after, &::before {
+                display: none;
+            }
+        }
+    }
+    &__wrapper {
+        @include flex-column;
+        text-align: center;
+    }
+    &__title {
+        color: var(--title-color);
+        margin-bottom: 20px;
+    }
+
+    // .portfolio__subtitle
+
+    &__subtitle {
+        color: var(--subtitle-color);
+        margin-bottom: 28px;
+    }
+
+    // .portfolio__descr
+
+    &__descr {
+        margin-bottom: 48px;
+    }
+
+    // .portfolio__list
+
+    &__list {
+        @include flex-all-between;
+        margin-bottom: 34px;
+        gap: 69px;
+        @include tablet {
+            gap: 30px;
+        }
+        @include small-tablet {
+            flex-direction: column;
+            gap: 54px;
+        }
+    }
+
+    // .portfolio__item
+
+    &__item {
+        position: relative;
+        @include mobile {
+            & img {
+                width: 300px;
+                height: 300px;
+            }
+            &--two img {
+                width: 340px;
+                height: 338px;
+            }
+        }
+        &-text {
+            position: absolute;
+            left: 24px;
+            bottom: 50px;
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 0px;
+            letter-spacing: 0.3%;
+            color: #fff;
+            &--two {
+                left: 39px;
+                bottom: 57px;
+            }
+            @include small-desktop {
+                font-size: 20px;
+                left:20px;
+                bottom: 40px;
+                &--two {
+                    left: 35px;
+                    bottom: 45px;
+                }
+            }
+            @include tablet {
+                font-size: 18px;
+            }
+            @include small-tablet {
+                font-size: 24px;
+            }
+        }
+    }
+
+    // .portfolio__button
+
+    &__button {
+        align-self: center;
+    }
+}

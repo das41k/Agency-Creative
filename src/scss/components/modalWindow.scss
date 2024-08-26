@@ -1,0 +1,141 @@
+.modal {
+    position: fixed;
+    inset: 0;
+    background-color: #0000002d;
+    z-index: 4;
+    @include flex-all-center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--transition), visibility var(--transition);
+    color: #464646;
+    &--visible {
+        opacity: 1;
+        visibility: visible;
+    }
+    // .modal__window
+
+    &__window {
+        background-color: #fff;
+        padding: 56px 48px;
+        margin: 0 20px;
+        border-radius: 20px;
+        position: relative;
+        @include small-tablet {
+            padding: 56px 20px;
+        }
+         // .modal__window-title
+        &-cancel {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+        }
+        &-title {
+            font-size: 36px;
+            font-weight: 600;
+            line-height: 44px;
+            letter-spacing: -2%;
+            font-family: Nunito;
+            color: #1d1d1d;
+            margin-bottom: 20px;
+            @include small-tablet {
+                font-size: 30px;
+            }
+            @include mobile {
+                font-size: 28px;
+            }
+            @include small-mobile {
+                font-size: 24px;
+                text-align: center;
+            }
+        }
+
+        // .modal__window-call
+
+        &-call {
+            margin-bottom: 48px;
+            font-style: normal;
+            font-weight: 500;
+            & a {
+                color: #377dff;;
+            }
+            @include small-tablet {
+                
+            }
+        }
+
+        // .modal__window-form
+
+        &-form {
+            @include flex-column;
+            gap: 24px;
+        }
+    }
+
+}
+.form {
+    // .form__top
+
+    &__top {
+        @include flex-justify-between;
+        gap: 32px;
+    }
+
+    // .form__label
+
+    &__label {
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 20px;
+        color: #1d1d1d;
+        @include flex-column;
+        gap: 6px;
+    }
+
+    // .form__label-text
+
+    &__label-text {
+    }
+
+    // .form__input
+
+    &__input {
+        border: 1px solid rgb(237, 237, 237);
+        border-radius: 8px;
+        background: rgb(255, 255, 255);
+        padding: 10px 14px;
+        width: 100%;
+        &--small {
+            width: 240px;
+            @include small-tablet {
+                width: 100%;
+            }
+        }
+    }
+
+    // .form__body
+
+    &__body {
+        @include flex-column;
+        gap: 24px;
+    }
+
+    // .form__textarea
+
+    &__textarea {
+        margin-bottom: 8px;
+        outline: none;
+        resize: none;
+        height: 134px;
+    }
+
+    // .form__button
+
+    &__button {
+        align-self: flex-start;
+        background-color: #377dff;;
+        color: #ffffff;
+        @include small-mobile {
+            align-self: center;
+        }
+    }
+}

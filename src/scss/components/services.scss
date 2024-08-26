@@ -1,4 +1,3 @@
-
 .services {
     margin-top: 150px;
     // .services__wrapper
@@ -91,8 +90,10 @@
         column-gap: 41px;
         row-gap: 38px;
         @include tablet {
-            @include flex-column-center;
             gap: 35px;
+        }
+        @include mobile {
+            @include flex-column-center;
         }
     }
 
