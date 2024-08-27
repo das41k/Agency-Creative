@@ -1,0 +1,161 @@
+.testimonials {
+    margin-top: 141px;
+    padding: 55px 0px 43px;
+    // .testimonials__title
+    & .container {
+        position: relative;
+        &::before {
+            content: url('../assets/icons/dots-blue.svg');
+            display: inline-block;
+            transform: rotate(14.48deg);
+            position: absolute;
+            top: 0;
+            left: 80px;
+            @include tablet {
+                left: 30px;
+                top: -40px
+            }
+        }
+        &::after {
+            content: url('../assets/icons/dots-blue.svg');
+            display: inline-block;
+            transform: rotate(14.48deg);
+            position: absolute;
+            bottom: 0;
+            right: 0px;
+            z-index: -1;
+        }
+        @include small-tablet {
+            &::before, &::after {
+                display: none;
+            }
+        }
+    }
+    &__title {
+        color: var(--title-color);
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    // .testimonials__descr
+
+    &__descr {
+        color: var(--subtitle-color);
+        text-align: center;
+        margin-bottom: 50px;
+    }
+
+    // .testimonials__slider
+    &__slider { 
+        z-index: 0 !important;
+        &-nav {
+            position: absolute;
+            top:90px;
+            right: 20px;
+            @include flex-align-center;
+            gap: 20px;
+            @include tablet {
+                top: 110px;
+            }
+            @include small-tablet {
+                display: none;
+            }
+        }
+        &-prev {
+            & svg {
+                transform: rotate(180deg);
+            }
+        }
+        &-prev, &-next {
+            padding: 10px 12px;
+            border: 1px solid var(--title-color);
+            border-radius: 100px;
+            transition: border var(--transition);
+            & path{
+                stroke: var(--title-color);
+                transition: stroke var(--transition);
+            }
+            @include tablet {
+                & svg {
+                    width: 18px;
+                    height: 18px;
+                }
+            }
+        }
+    }
+
+    // .testimonials__slide
+
+    &__slide {
+        border-radius: 20px;
+        padding: 50px 31px 107px 40px;
+        box-shadow: 0px 8px 24px 0px rgba(0, 0, 0, 0.05);
+        background-color: var(--slider-bg);
+        max-width: 380px;
+        box-sizing: border-box;
+        @include mobile {
+            padding: 30px 11px 50px 20px;
+        }
+        // .testimonials__slide-head
+        &-head {
+            @include flex-align-center;
+            gap: 30px;
+            margin-bottom: 25px;
+        }
+
+        &-author {
+            font-style: normal;
+            // .testimonials__slide-author-name
+            &-name {
+                font-weight: 600;
+                line-height: 34px;
+                margin-bottom: -10px;
+            }
+    
+            // .testimonials__slide-author-quote
+    
+            &-quote {
+                margin: 0;
+                max-width: 309px;
+            }
+        }
+    }
+    &__pagination {
+        display: none;
+        @include small-tablet {
+            display: block;
+            margin-left: 10%;
+        }
+    }
+}
+.swiper-wrapper {
+    margin-bottom: 30px;
+}
+.swiper-button-disabled.testimonials__slider-next,
+.swiper-button-disabled.testimonials__slider-prev {
+    cursor: auto;
+    border: 1px solid rgb(86, 86, 87);
+    background-color: transparent;
+}
+.swiper-button-disabled.testimonials__slider-next path,
+.swiper-button-disabled.testimonials__slider-prev path {
+    stroke: rgb(86, 86, 87);
+}
+.swiper-pagination-bullet {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: var(--main-text);
+    opacity: 0.2;
+    margin-left: 5px;
+    @include mobile {
+        width: 15px;
+        height: 15px;
+    }
+}
+
+.swiper-pagination-bullet-active {
+    opacity: 1;
+    background-color: #377dff;
+}

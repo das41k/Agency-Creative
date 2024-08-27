@@ -1,0 +1,107 @@
+.collaboration {
+    margin-top: 203px;
+    // .collaboration__wrapper
+
+    &__wrapper {
+        @include flex-align-center;
+        gap: 162px;
+        @include small-desktop {
+            gap: 50px;
+        }
+        @include mini-desktop {
+            gap: 20px;
+        }
+        @include tablet {
+            flex-direction: column-reverse;
+            text-align: center;
+            gap: 40px;
+        }
+    }
+
+    // .collaboration__cta
+
+    &__cta {
+        max-width: 491px;
+        @include tablet {
+            @include flex-column;
+            max-width: none;
+        }
+    }
+
+    // .collaboration__title
+
+    &__title {
+        color: var(--subtitle-color);
+        margin-bottom: 25px;
+    }
+
+    // .collaboration__descr
+
+    &__descr {
+        line-height: 34px;
+        margin-bottom: 25px;
+    }
+
+    // .collaboration__imges
+
+    &__imges {
+        align-self: flex-start;
+        position: relative;
+        &::before {
+            content: url('../assets/icons/dots-orange.svg');
+            position: absolute;
+            bottom: 20px;
+            right: -90px;
+            z-index: -1;
+        }
+        &::after {
+            content: url('../assets/icons/dots-orange.svg');
+            position: absolute;
+            bottom: 20px;
+            right: -200px;
+            z-index: -2;
+        }
+        &::after, &::before {
+            @include tablet {
+                display: none;
+            }
+        }
+    }
+    &__img {
+        &--two {
+            position: absolute;
+            bottom: 91px;
+            z-index: -1;
+            right: -80%;
+            @include mobile {
+                width: 180px;
+                height: 177px;
+                right: -50%;
+                bottom: 150px;
+            }
+            @include small-mobile {
+                right: -30%;
+            }
+        }
+        &--first {
+            @include mobile {
+                width: 221px;
+                height: 196px;
+            }
+        }
+    }
+    &__dots {
+        position: absolute;
+        top: -40px;
+        left: -20px;
+        z-index: -1;
+        @include tablet {
+            display: none;
+        }
+    }
+    &__button {
+        @include tablet {
+            align-self: center;
+        }
+    }
+}
