@@ -22,8 +22,8 @@
             transform: rotate(14.48deg);
             position: absolute;
             bottom: 0;
-            right: 0px;
-            z-index: -1;
+            right: 0;
+            z-index: -5;
         }
         @include small-tablet {
             &::before, &::after {
@@ -47,7 +47,7 @@
 
     // .testimonials__slider
     &__slider { 
-        z-index: 0 !important;
+        z-index: -1 !important;
         &-nav {
             position: absolute;
             top:90px;

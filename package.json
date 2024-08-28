@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "fslightbox": "^3.4.1",
+    "intl-tel-input": "^24.3.4",
     "sharp": "^0.33.5",
     "swiper": "^11.1.10",
     "vite-plugin-minify": "^2.0.0"

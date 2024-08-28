@@ -17,12 +17,12 @@
           <input
             type="text"
             class="form__input form__input--small"
-            placeholder="First name"
+            placeholder="First name" required
           />
         </label>
         <label class="form__label">
           <span class="form__label-text"> Last name </span>
-          <input
+          <input required
             type="text"
             class="form__input form__input--small"
             placeholder="Last name"
@@ -32,7 +32,7 @@
       <div class="form__body">
         <label class="form__label">
           <span class="form__label-text"> Email </span>
-          <input
+          <input required
             type="email"
             class="form__input"
             placeholder="you@company.com"
@@ -40,11 +40,11 @@
         </label>
         <label class="form__label">
           <span class="form__label-text"> Phone number </span>
-          <input type="tel" class="form__input" />
+          <input type="tel" class="form__input" id="phone" name="phone" required/>
         </label>
         <label class="form__label">
           <span class="form__label-text"> Message </span>
-          <textarea
+          <textarea required
             class="form__input form__textarea"
             placeholder="Leave us a message..."
           ></textarea>
