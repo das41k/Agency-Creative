@@ -23,7 +23,7 @@
             position: absolute;
             bottom: 0;
             right: 0;
-            z-index: -5;
+            z-index: -1;
         }
         @include small-tablet {
             &::before, &::after {
@@ -47,7 +47,7 @@
 
     // .testimonials__slider
     &__slider { 
-        z-index: -1 !important;
+        z-index: 0 !important;
         &-nav {
             position: absolute;
             top:90px;
@@ -125,6 +125,7 @@
         @include small-tablet {
             display: block;
             margin-left: 10%;
+            z-index: 2;
         }
     }
 }
@@ -143,6 +144,7 @@
 }
 .swiper-pagination-bullet {
     display: inline-block;
+    cursor: pointer;
     width: 20px;
     height: 20px;
     border-radius: 50%;

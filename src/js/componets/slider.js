@@ -19,6 +19,7 @@ export const useSlider = () => {
         pagination: {
             el: '.testimonials__pagination',
             type: 'bullets',
+            clickable: true,
         },
         breakpoints: {
             992: {
