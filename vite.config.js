@@ -5,7 +5,7 @@ import { ViteImageOptimizer } from "vite-plugin-image-optimizer";
 
 export default defineConfig({
   root: "./src",
-  base: '/AgencyCreavite/',
+  base: '/Agency-Creative/',
   server: {
     port: 3000,
   },
